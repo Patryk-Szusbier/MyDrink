@@ -3,13 +3,19 @@ import { StyleSheet } from "react-native";
 const QuantityInputStyle = StyleSheet.create({
   input: {
     borderWidth: 1,
-    borderColor: "#ccc",
+    borderColor: "#E8DCB9",
+    borderRadius: 20,
     padding: 8,
     marginBottom: 20,
+    color: "#fff",
+    placeholderTextColor: "#fff",
   },
   text: {
-    fontSize: 18,
-    marginVertical: 10,
+    fontSize: 15,
+    fontWeight: "bold",
+    color: "#FFC145",
+    marginBottom: 6,
+    textAlign: "center",
   },
 });
 

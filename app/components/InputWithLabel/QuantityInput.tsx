@@ -14,6 +14,16 @@ const QuantityInput: React.FC<QuantityInputProps> = ({
   setMl,
   ...rest
 }) => {
+  const handleTextChange = (text: string) => {
+    const numeric = text.replace(/[^0-9]/g, "");
+    const value = parseInt(numeric || "0", 10);
+
+    if (value <= 1000) {
+      setMl(numeric);
+    } else {
+      setMl("1000");
+    }
+  };
   return (
     <>
       <Text style={QuantityInputStyle.text}>{title}</Text>
@@ -21,8 +31,9 @@ const QuantityInput: React.FC<QuantityInputProps> = ({
         style={QuantityInputStyle.input}
         keyboardType="numeric"
         value={ml}
-        onChangeText={setMl}
+        onChangeText={handleTextChange}
         placeholder="np. 500"
+        placeholderTextColor={"#AAA"}
         {...rest}
       />
     </>

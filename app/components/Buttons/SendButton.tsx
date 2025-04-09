@@ -1,5 +1,6 @@
 import React from "react";
-import { Button, Alert } from "react-native";
+import { TouchableOpacity, Alert, Text } from "react-native";
+import SendButtonStyle from "./SendButtonStyle";
 
 interface SendButtonProps {
   selectedDrink: string;
@@ -21,7 +22,15 @@ const SendButton: React.FC<SendButtonProps> = ({ selectedDrink, ml }) => {
     Alert.alert("Sukces", `Wysłano: ${command}`);
   };
 
-  return <Button title="Wyślij" onPress={sendCommand} />;
+  return (
+    <TouchableOpacity
+      style={SendButtonStyle.button}
+      onPress={sendCommand}
+      activeOpacity={0.5}
+    >
+      <Text style={SendButtonStyle.buttonText}>Wyślij</Text>
+    </TouchableOpacity>
+  );
 };
 
 export default SendButton;

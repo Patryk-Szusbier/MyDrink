@@ -9,6 +9,10 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
+      "infoPlist": {
+        "NSBluetoothAlwaysUsageDescription": "Potrzebujemy dostępu do Bluetooth, aby skanować urządzenia.",
+        "NSBluetoothPeripheralUsageDescription": "Bluetooth jest używany do komunikacji z urządzeniami BLE."
+      },
       "supportsTablet": true
     },
     "android": {
@@ -16,7 +20,12 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.anonymous.Mobile_App"
+      "package": "com.anonymous.Mobile_App",
+      "permissions": [
+        "android.permission.BLUETOOTH",
+        "android.permission.BLUETOOTH_ADMIN",
+        "android.permission.BLUETOOTH_CONNECT"
+      ]
     },
     "web": {
       "bundler": "metro",
@@ -24,6 +33,7 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
+      ["react-native-ble-plx", {}],
       "expo-router",
       [
         "expo-splash-screen",
@@ -37,6 +47,14 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "28217a14-bb1c-4c34-ba10-b4ee27111b3c"
+      }
     }
   }
 }

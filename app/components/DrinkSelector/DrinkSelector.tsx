@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { View, Text, Pressable } from "react-native";
 import { RadioButton } from "react-native-paper";
 import DrinkSelectorStyle from "./DrinkSelectorStyle";
 
@@ -20,18 +20,31 @@ const DrinkSelector: React.FC<DrinkSelectorProps> = ({
 }) => {
   return (
     <>
-      <Text style={DrinkSelectorStyle.radioButtonLabel}>{title}</Text>
+      <Text style={DrinkSelectorStyle.title}>{title}</Text>
       <RadioButton.Group onValueChange={setSelectedDrink} value={selectedDrink}>
         <View style={DrinkSelectorStyle.radioButtonRow}>
-          {drinkOptions.map((option, index) => (
-            <View key={option} style={DrinkSelectorStyle.radioButtonContainer}>
-              <RadioButton.Item
-                label={drinkNames[index]}
-                value={option}
-                labelStyle={DrinkSelectorStyle.radioButtonLabel}
-              />
-            </View>
-          ))}
+          {drinkOptions.map((option, index) => {
+            const isSelected = selectedDrink === option;
+            return (
+              <Pressable
+                key={option}
+                onPress={() => setSelectedDrink(option)}
+                style={[
+                  DrinkSelectorStyle.radioButtonContainer,
+                  isSelected && DrinkSelectorStyle.selectedContainer,
+                ]}
+              >
+                <Text
+                  style={[
+                    DrinkSelectorStyle.radioButtonLabel,
+                    isSelected && DrinkSelectorStyle.selectedLabel,
+                  ]}
+                >
+                  {drinkNames[index]}
+                </Text>
+              </Pressable>
+            );
+          })}
         </View>
       </RadioButton.Group>
     </>
