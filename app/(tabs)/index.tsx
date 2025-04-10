@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
-import DrinkSelector from "./components/DrinkSelector/DrinkSelector";
-import QuantityInput from "./components/InputWithLabel/QuantityInput";
-import SendButton from "./components/Buttons/SendButton";
-import BluetoothScanner from "./components/BluetoothList/BluetoothScaner";
+import QuantityInput from "../components/InputWithLabel/QuantityInput";
+import SendButton from "../components/Buttons/SendButton";
+import BluetoothScanner from "../components/BluetoothList/BluetoothScaner";
+import DrinkSelector from "../components/DrinkSelector/DrinkSelector";
+import globalStyle from "../GlobalStyle";
 
 const drinkOptions = ["a", "b", "c", "d", "e", "f", "g", "h"];
 const drinkNames = [
@@ -22,7 +23,7 @@ export default function Index() {
   const [selectedDrink, setSelectedDrink] = useState("");
 
   return (
-    <View style={styles.container}>
+    <View style={globalStyle.container}>
       <DrinkSelector
         title={"Wybierz napój:"}
         selectedDrink={selectedDrink}
@@ -36,20 +37,6 @@ export default function Index() {
         setMl={setMl}
       />
       <SendButton selectedDrink={selectedDrink} ml={ml} />
-      <BluetoothScanner />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#37323E",
-    margin: 0,
-    padding: 10,
-    flexDirection: "column",
-  },
-  button: {
-    padding: 2,
-  },
-});

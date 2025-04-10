@@ -2,10 +2,16 @@ import { Stack } from "expo-router";
 
 export default function RootLayout() {
   return (
-    <Stack
-      screenOptions={{
-        headerShown: false,
-      }}
-    />
+    <Stack>
+      <Stack.Screen
+        name="(tabs)"
+        options={{
+          headerShown: false,
+          headerStyle: {
+            backgroundColor: "#FFC145",
+          },
+        }}
+      />
+    </Stack>
   );
 }

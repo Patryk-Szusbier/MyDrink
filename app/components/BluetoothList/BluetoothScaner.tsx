@@ -6,10 +6,11 @@ import {
   Text,
   View,
   Button,
+  TouchableOpacity,
 } from "react-native";
 import { BleManager } from "react-native-ble-plx";
 import BluetoothClassic from "react-native-bluetooth-classic";
-
+import globalStyle from "@/app/GlobalStyle";
 const manager = new BleManager();
 
 const BluetoothScanner = () => {
@@ -67,8 +68,14 @@ const BluetoothScanner = () => {
     }, 10000);
   };
   return (
-    <View style={{ flex: 1, padding: 20 }}>
-      <Button title="Skanuj urządzenia Bluetooth" onPress={startScan} />
+    <View>
+      <TouchableOpacity
+        style={globalStyle.button}
+        onPress={startScan}
+        activeOpacity={0.5}
+      >
+        <Text style={globalStyle.text}>Skanuj urządzenia Bluetooth</Text>
+      </TouchableOpacity>
 
       {scanningFinished && devices.size === 0 ? (
         <Text style={{ marginTop: 20 }}>Brak urządzeń do wyświetlenia</Text>
@@ -77,10 +84,16 @@ const BluetoothScanner = () => {
           data={Array.from(devices.values())}
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => (
-            <View style={{ padding: 10, borderBottomWidth: 1 }}>
-              <Text>Nazwa: {item.name}</Text>
-              <Text>ID: {item.id}</Text>
-              <Text>RSSI: {item.rssi}</Text>
+            <View
+              style={{
+                padding: 10,
+                borderBottomWidth: 1,
+                borderBlockColor: "white",
+              }}
+            >
+              <Text style={globalStyle.text}>Nazwa: {item.name}</Text>
+              <Text style={globalStyle.text}>ID: {item.id}</Text>
+              <Text style={globalStyle.text}>RSSI: {item.rssi}</Text>
             </View>
           )}
         />
