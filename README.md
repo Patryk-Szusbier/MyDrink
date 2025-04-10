@@ -9,6 +9,7 @@ A mobile app to select drinks, set the amount, and send commands via Bluetooth L
 - Select drink type
 - Choose amount
 - Send command via BLE (simulation)
+- Scanning nearby Bluetooth devices
 
 ---
 
@@ -28,11 +29,13 @@ react-native-paper
 
 react-native-ble-plx (for BLE)
 
+react-native-bluetooth-classic
+
 ---
 
 ## 🛠️ To Do
 
-- [ ] Create Bluetooth connection screen for scanning and pairing with devices
+- [ ] Create Bluetooth connection screen for ~~scanning and~~ pairing with devices
 - [ ] Implement sending commands via BLE to the selected device
 
 ---

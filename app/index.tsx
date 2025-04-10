@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import DrinkSelector from "./components/DrinkSelector/DrinkSelector";
 import QuantityInput from "./components/InputWithLabel/QuantityInput";
-import SendButton from "./components/Button/SendButton";
+import SendButton from "./components/Buttons/SendButton";
 import BluetoothScanner from "./components/BluetoothList/BluetoothScaner";
 
 const drinkOptions = ["a", "b", "c", "d", "e", "f", "g", "h"];
@@ -36,6 +36,7 @@ export default function Index() {
         setMl={setMl}
       />
       <SendButton selectedDrink={selectedDrink} ml={ml} />
+      <BluetoothScanner />
     </View>
   );
 }

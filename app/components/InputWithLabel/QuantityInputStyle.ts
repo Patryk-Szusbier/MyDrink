@@ -8,7 +8,6 @@ const QuantityInputStyle = StyleSheet.create({
     padding: 8,
     marginBottom: 20,
     color: "#fff",
-    placeholderTextColor: "#fff",
   },
   text: {
     fontSize: 15,
