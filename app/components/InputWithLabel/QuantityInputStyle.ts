@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 const QuantityInputStyle = StyleSheet.create({
   input: {
     borderWidth: 1,
-    borderColor: "#E8DCB9",
+    borderColor: "#695D8B",
     borderRadius: 20,
     padding: 8,
     marginBottom: 20,
@@ -12,7 +12,7 @@ const QuantityInputStyle = StyleSheet.create({
   text: {
     fontSize: 15,
     fontWeight: "bold",
-    color: "#FFC145",
+    color: "#DFCFCF",
     marginBottom: 6,
     textAlign: "center",
   },

@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 const SendButtonStyle = StyleSheet.create({
   button: {
-    backgroundColor: "#7D8CA3",
+    backgroundColor: "#484C69",
     borderRadius: 20,
     paddingVertical: 14,
     paddingHorizontal: 10,
@@ -12,7 +12,12 @@ const SendButtonStyle = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "center",
     borderWidth: 2,
-    borderColor: "#E8DCB9",
+    borderColor: "#695D8B",
+    shadowColor: "#fff",
+    shadowOpacity: 0.2,
+    shadowOffset: { width: 0, height: -3 },
+    shadowRadius: 5,
+    elevation: 4,
   },
   buttonText: {
     fontSize: 18,

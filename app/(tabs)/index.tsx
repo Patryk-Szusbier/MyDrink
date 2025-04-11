@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import QuantityInput from "../components/InputWithLabel/QuantityInput";
 import SendButton from "../components/Buttons/SendButton";
-import BluetoothScanner from "../components/BluetoothList/BluetoothScaner";
+
 import DrinkSelector from "../components/DrinkSelector/DrinkSelector";
 import globalStyle from "../GlobalStyle";
+import Toast from "react-native-toast-message";
 
 const drinkOptions = ["a", "b", "c", "d", "e", "f", "g", "h"];
 const drinkNames = [
@@ -24,6 +25,7 @@ export default function Index() {
 
   return (
     <View style={globalStyle.container}>
+      <Toast />
       <DrinkSelector
         title={"Wybierz napój:"}
         selectedDrink={selectedDrink}

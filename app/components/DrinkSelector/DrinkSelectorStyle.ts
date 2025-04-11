@@ -4,7 +4,7 @@ const DrinkSelectorStyle = StyleSheet.create({
   title: {
     fontSize: 22,
     fontWeight: "bold",
-    color: "#FFC145",
+    color: "#DFCFCF",
     marginBottom: 4,
     textAlign: "center",
   },
@@ -15,7 +15,7 @@ const DrinkSelectorStyle = StyleSheet.create({
     paddingVertical: 10,
   },
   radioButtonContainer: {
-    backgroundColor: "#7D8CA3",
+    backgroundColor: "#484C69",
     borderRadius: 20,
     paddingVertical: 14,
     paddingHorizontal: 10,
@@ -25,10 +25,15 @@ const DrinkSelectorStyle = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "center",
     borderWidth: 2,
-    borderColor: "#E8DCB9",
+    borderColor: "#695D8B",
+    shadowColor: "#fff",
+    shadowOpacity: 0.2,
+    shadowOffset: { width: 0, height: -3 },
+    shadowRadius: 5,
+    elevation: 4,
   },
   selectedContainer: {
-    backgroundColor: "#499F68",
+    backgroundColor: "#46324D",
   },
   radioButtonLabel: {
     fontSize: 12,

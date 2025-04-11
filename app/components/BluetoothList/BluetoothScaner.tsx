@@ -5,12 +5,14 @@ import {
   FlatList,
   Text,
   View,
-  Button,
   TouchableOpacity,
 } from "react-native";
 import { BleManager } from "react-native-ble-plx";
 import BluetoothClassic from "react-native-bluetooth-classic";
 import globalStyle from "@/app/GlobalStyle";
+import DeviceItem from "./DeviceItem";
+import Toast from "react-native-toast-message";
+
 const manager = new BleManager();
 
 const BluetoothScanner = () => {
@@ -38,35 +40,38 @@ const BluetoothScanner = () => {
   const startScan = async () => {
     setDevices(new Map());
     setScanningFinished(false);
-    manager.devices;
-    // BLE SCAN
-    manager.startDeviceScan(null, null, (error, device) => {
-      if (error) {
-        console.warn(error);
-        return;
-      }
 
+    manager.startDeviceScan(null, null, (error, device) => {
+      if (error) return console.warn(error);
       if (device && device.name) {
-        setDevices((prev) => new Map(prev.set(device.id, device)));
+        const bleDevice = { ...device, type: "ble" };
+        setDevices((prev) => new Map(prev.set(bleDevice.id, bleDevice)));
       }
     });
 
-    // CLASSIC BLUETOOH SCAN
-    BluetoothClassic.getBondedDevices()
-      .then((foundDevices) => {
-        foundDevices.forEach((device) => {
-          setDevices((prev) => new Map(prev.set(device.id, device)));
-        });
-      })
-      .catch((error) =>
-        console.warn("Error scanning for classic Bluetooth devices", error)
+    try {
+      const bonded = await BluetoothClassic.getBondedDevices();
+      bonded.forEach((d) =>
+        setDevices(
+          (prev) => new Map(prev.set(d.id, { ...d, type: "classic-bonded" }))
+        )
       );
-    //TIMEOUT AFTER 10 SEC
+
+      const discovered = await BluetoothClassic.startDiscovery();
+      discovered.forEach((d) =>
+        setDevices((prev) => new Map(prev.set(d.id, { ...d, type: "classic" })))
+      );
+    } catch (error) {
+      console.warn("❌ Błąd przy skanowaniu:", error);
+    }
+
     setTimeout(() => {
       manager.stopDeviceScan();
+      BluetoothClassic.cancelDiscovery();
       setScanningFinished(true);
     }, 10000);
   };
+
   return (
     <View>
       <TouchableOpacity
@@ -83,21 +88,10 @@ const BluetoothScanner = () => {
         <FlatList
           data={Array.from(devices.values())}
           keyExtractor={(item) => item.id}
-          renderItem={({ item }) => (
-            <View
-              style={{
-                padding: 10,
-                borderBottomWidth: 1,
-                borderBlockColor: "white",
-              }}
-            >
-              <Text style={globalStyle.text}>Nazwa: {item.name}</Text>
-              <Text style={globalStyle.text}>ID: {item.id}</Text>
-              <Text style={globalStyle.text}>RSSI: {item.rssi}</Text>
-            </View>
-          )}
+          renderItem={({ item }) => <DeviceItem item={item} />}
         />
       )}
+      <Toast topOffset={20} position="top" />
     </View>
   );
 };

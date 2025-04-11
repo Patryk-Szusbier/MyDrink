@@ -1,24 +1,22 @@
 import { StyleSheet } from "react-native";
 
-const globalStyle = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#151517",
-    margin: 0,
+const ScanenerStyles = StyleSheet.create({
+  dataList: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
     padding: 10,
-    flexDirection: "column",
-    color: "white",
+    borderBottomWidth: 1,
+    borderColor: "#695D8B",
+    color: "#DFCFCF",
   },
-  text: {
-    color: "white",
-  },
-  button: {
+  ConButton: {
     backgroundColor: "#484C69",
-    borderRadius: 20,
+    borderRadius: 15,
     paddingVertical: 14,
     paddingHorizontal: 10,
-    margin: 6,
-    minWidth: 100,
+    marginHorizontal: 10,
+    minWidth: 60,
     alignItems: "center",
     flexDirection: "column",
     justifyContent: "center",
@@ -32,4 +30,4 @@ const globalStyle = StyleSheet.create({
   },
 });
 
-export default globalStyle;
+export default ScanenerStyles;
