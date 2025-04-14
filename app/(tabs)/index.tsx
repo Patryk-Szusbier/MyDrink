@@ -6,6 +6,7 @@ import SendButton from "../components/Buttons/SendButton";
 import DrinkSelector from "../components/DrinkSelector/DrinkSelector";
 import globalStyle from "../GlobalStyle";
 import Toast from "react-native-toast-message";
+import ConnectionStatus from "../components/ConnectionStatus/ConnectionStatus";
 
 const drinkOptions = ["a", "b", "c", "d", "e", "f", "g", "h"];
 const drinkNames = [
@@ -39,6 +40,7 @@ export default function Index() {
         setMl={setMl}
       />
       <SendButton selectedDrink={selectedDrink} ml={ml} />
+      <ConnectionStatus />
     </View>
   );
 }

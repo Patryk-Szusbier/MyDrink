@@ -3,10 +3,10 @@ import { StyleSheet } from "react-native";
 const DrinkSelectorStyle = StyleSheet.create({
   title: {
     fontSize: 22,
-    fontWeight: "bold",
-    color: "#DFCFCF",
+    color: "#F0C38E",
     marginBottom: 4,
     textAlign: "center",
+    fontFamily: "Caudex-Bold",
   },
   radioButtonRow: {
     flexDirection: "row",
@@ -15,7 +15,7 @@ const DrinkSelectorStyle = StyleSheet.create({
     paddingVertical: 10,
   },
   radioButtonContainer: {
-    backgroundColor: "#484C69",
+    backgroundColor: "#312C51",
     borderRadius: 20,
     paddingVertical: 14,
     paddingHorizontal: 10,
@@ -33,17 +33,19 @@ const DrinkSelectorStyle = StyleSheet.create({
     elevation: 4,
   },
   selectedContainer: {
-    backgroundColor: "#46324D",
+    backgroundColor: "#F0C38E",
   },
   radioButtonLabel: {
     fontSize: 12,
-    color: "#fff",
+    color: "#F0C38E",
     fontWeight: "500",
     marginRight: 1,
+    fontFamily: "Caudex-Regular",
   },
   selectedLabel: {
     fontWeight: "700",
-    color: "#fff",
+    color: "#312C51",
+    fontFamily: "Caudex-Bold",
   },
 });
 

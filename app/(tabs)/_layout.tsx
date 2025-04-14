@@ -1,27 +1,27 @@
 import { Tabs } from "expo-router";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import Feather from "@expo/vector-icons/Feather";
+import CustomTabBarButton from "../hooks/CustomTabBarButton";
 
 const _Layout = () => {
   return (
     <Tabs
       screenOptions={{
         tabBarStyle: {
-          backgroundColor: "#484C69",
-          borderRadius: 25,
-          height: 60,
+          backgroundColor: "#312C51",
+          borderRadius: 20,
+          height: 50,
           position: "absolute",
           bottom: 15,
-          left: "10%",
-          right: "10%",
-          alignItems: "center",
-          justifyContent: "center",
+          left: "15%",
+          right: "15%",
           shadowColor: "#fff",
           shadowOpacity: 0.1,
-          shadowOffset: { width: 0, height: -2 },
+          shadowOffset: { width: 0, height: -3 },
           shadowRadius: 6,
-          elevation: 3,
+          elevation: 5,
         },
+        tabBarButton: (props) => <CustomTabBarButton {...props} />,
       }}
     >
       <Tabs.Screen
@@ -33,10 +33,13 @@ const _Layout = () => {
             <Feather
               name="home"
               size={24}
-              color={focused ? "white" : "black"}
+              color={focused ? "#312C51" : "white"}
             />
           ),
-          tabBarActiveTintColor: "white",
+          tabBarActiveTintColor: "#312C51",
+          tabBarLabelStyle: {
+            fontFamily: "Caudex-Bold",
+          },
         }}
       />
       <Tabs.Screen
@@ -48,10 +51,13 @@ const _Layout = () => {
             <MaterialIcons
               name="devices"
               size={24}
-              color={focused ? "white" : "black"}
+              color={focused ? "#312C51" : "white"}
             />
           ),
-          tabBarActiveTintColor: "white",
+          tabBarActiveTintColor: "#312C51",
+          tabBarLabelStyle: {
+            fontFamily: "Caudex-Bold",
+          },
         }}
       />
     </Tabs>

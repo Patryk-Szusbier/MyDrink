@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 const SendButtonStyle = StyleSheet.create({
   button: {
-    backgroundColor: "#484C69",
+    backgroundColor: "#312C51",
     borderRadius: 20,
     paddingVertical: 14,
     paddingHorizontal: 10,
@@ -21,8 +21,9 @@ const SendButtonStyle = StyleSheet.create({
   },
   buttonText: {
     fontSize: 18,
-    color: "#fff",
+    color: "#F0C38E",
     fontWeight: "400",
+    fontFamily: "Caudex-Regular",
   },
 });
 

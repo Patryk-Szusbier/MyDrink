@@ -62,7 +62,13 @@ const BluetoothScanner = () => {
         setDevices((prev) => new Map(prev.set(d.id, { ...d, type: "classic" })))
       );
     } catch (error) {
-      console.warn("❌ Błąd przy skanowaniu:", error);
+      Toast.show({
+        type: "error",
+        position: "top",
+        text1: `❌ Błąd przy skanowaniu:"`,
+        text2: error instanceof Error ? error.message : JSON.stringify(error),
+        visibilityTime: 3000,
+      });
     }
 
     setTimeout(() => {

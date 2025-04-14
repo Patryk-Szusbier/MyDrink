@@ -7,14 +7,15 @@ const QuantityInputStyle = StyleSheet.create({
     borderRadius: 20,
     padding: 8,
     marginBottom: 20,
-    color: "#fff",
+    color: "#F0C38E",
+    fontFamily: "Caudex-Regular",
   },
   text: {
     fontSize: 15,
-    fontWeight: "bold",
-    color: "#DFCFCF",
+    color: "#F0C38E",
     marginBottom: 6,
     textAlign: "center",
+    fontFamily: "Caudex-Bold",
   },
 });
 

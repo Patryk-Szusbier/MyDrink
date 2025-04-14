@@ -8,10 +8,10 @@ const ScanenerStyles = StyleSheet.create({
     padding: 10,
     borderBottomWidth: 1,
     borderColor: "#695D8B",
-    color: "#DFCFCF",
+    color: "#F1AA9B",
   },
   ConButton: {
-    backgroundColor: "#484C69",
+    backgroundColor: "#F0C38E",
     borderRadius: 15,
     paddingVertical: 14,
     paddingHorizontal: 10,
@@ -27,6 +27,14 @@ const ScanenerStyles = StyleSheet.create({
     shadowOffset: { width: 0, height: -3 },
     shadowRadius: 5,
     elevation: 4,
+  },
+  text: {
+    color: "#321C51",
+    fontFamily: "Caudex-Regular",
+  },
+  text2: {
+    color: "#F1AA9B",
+    fontFamily: "Caudex-Regular",
   },
 });
 

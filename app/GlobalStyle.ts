@@ -3,17 +3,19 @@ import { StyleSheet } from "react-native";
 const globalStyle = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#151517",
+    backgroundColor: "#48426D",
     margin: 0,
     padding: 10,
+    paddingBottom: 120,
     flexDirection: "column",
     color: "white",
   },
   text: {
-    color: "white",
+    color: "#F0C38E",
+    fontFamily: "Caudex-Regular",
   },
   button: {
-    backgroundColor: "#484C69",
+    backgroundColor: "#312C51",
     borderRadius: 20,
     paddingVertical: 14,
     paddingHorizontal: 10,
