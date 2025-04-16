@@ -28,14 +28,6 @@ const ScanenerStyles = StyleSheet.create({
     shadowRadius: 5,
     elevation: 4,
   },
-  text: {
-    color: "#321C51",
-    fontFamily: "Caudex-Regular",
-  },
-  text2: {
-    color: "#F1AA9B",
-    fontFamily: "Caudex-Regular",
-  },
 });
 
 export default ScanenerStyles;

@@ -27,6 +27,7 @@ export default function Index() {
   return (
     <View style={globalStyle.container}>
       <Toast />
+
       <DrinkSelector
         title={"Wybierz napój:"}
         selectedDrink={selectedDrink}

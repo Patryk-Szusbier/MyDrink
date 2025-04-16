@@ -7,7 +7,7 @@ const ConnectionStatus = () => {
   const { connectedDevice } = useBluetooth();
 
   return (
-    <View>
+    <View style={ConectionStyles.container}>
       <Text
         style={
           connectedDevice

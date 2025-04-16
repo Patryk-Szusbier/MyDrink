@@ -85,7 +85,7 @@ const BluetoothScanner = () => {
         onPress={startScan}
         activeOpacity={0.5}
       >
-        <Text style={globalStyle.text}>Skanuj urządzenia Bluetooth</Text>
+        <Text style={globalStyle.regularText}>Skanuj urządzenia Bluetooth</Text>
       </TouchableOpacity>
 
       {scanningFinished && devices.size === 0 ? (

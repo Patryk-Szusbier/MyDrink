@@ -22,7 +22,6 @@ const SendButtonStyle = StyleSheet.create({
   buttonText: {
     fontSize: 18,
     color: "#F0C38E",
-    fontWeight: "400",
     fontFamily: "Caudex-Regular",
   },
 });

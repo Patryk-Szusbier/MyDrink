@@ -10,9 +10,16 @@ const globalStyle = StyleSheet.create({
     flexDirection: "column",
     color: "white",
   },
-  text: {
+  regularText: {
     color: "#F0C38E",
     fontFamily: "Caudex-Regular",
+    textAlign: "center",
+  },
+
+  secondaryText: {
+    color: "#F1AA9B",
+    fontFamily: "Caudex-Regular",
+    textAlign: "center",
   },
   button: {
     backgroundColor: "#312C51",
